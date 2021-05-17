@@ -1,3 +1,5 @@
 <?php
 
-//silence is golden
+header('Location: public');
+exit;
+?>
