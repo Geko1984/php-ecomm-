@@ -29,7 +29,7 @@
                         <a class="nav-link active" aria-current="page" href="<?php echo ROOT_URL;?>public/?page=services">Servizi Offerti</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?php echo ROOT_URL;?>public/?page=products">Prodotti</a>
+                        <a class="nav-link active" aria-current="page" href="<?php echo ROOT_URL;?>shop/?page=product-list">Prodotti</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?php echo ROOT_URL;?>public/?page=contacts">Contatti</a>

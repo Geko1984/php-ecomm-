@@ -11,7 +11,12 @@ class DB
             echo 'Failed to connect to MySql ' . mysqli_connect_errno();
             die;
         }
-        $this->pdo = new PDO('mysl:dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS);
+        $dsn = 'mysql:dbname=phpecommerce;host=127.0.0.1';
+        $user = USER;
+        $password = PASS;
+
+        $this->pdo = new PDO($dsn, $user, $password);
+        //$this->pdo = new PDO('mysql:dbname=phpecomm;host:127.0.0.1','user' . NAME . ';host=' . HOST, USER, PASS);
     }
     public function query($sql)
     {
