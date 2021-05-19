@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.css">
-    <link href="<?php echo ROOT_URL;?>./assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo ROOT_URL; ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PHP E-comm</title>
 </head>
 
@@ -35,6 +36,16 @@
                         <a class="nav-link active" aria-current="page" href="<?php echo ROOT_URL;?>public/?page=contacts">Contatti</a>
                     </li>
                 </ul>
+
+                <ul class="navbar-nav" style="margin-left:auto">
+                <li class="nav-item">
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>shop?page=cart ">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge badge-success rounded-pill badge-warning">1</span>
+                </a>
+                </li>
+                </ul>
+                
                 <ul class="navbar-nav" style="margin-left:auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Area riservata</a>
