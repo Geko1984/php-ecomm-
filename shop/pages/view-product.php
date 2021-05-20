@@ -1,11 +1,26 @@
 
 <?php
+
 if (!defined('ROOT_URL')) {
     die;
   }
 if (! isset($_GET['id'])) {
     echo "<script>location.href='".ROOT_URL."';</script>";
     exit;
+  }
+
+  if (isset($_POST['add_to_cart'])) {
+
+    $productId = htmlspecialchars(trim($_POST['id']));
+    // addToCart Logic
+    $cm = new CartManager();
+    $cartId = $cm->getCurrentCrtId();
+  
+    // aggiumngi al carrello "cartId" il prodotto "productId"
+    $cm->addToCart($productId, $cartId);
+  
+    // stampato un messaggio per l'utente
+    //echo 'ok';
   }
   
 $id=htmlspecialchars(trim($_GET['id']));
@@ -34,5 +49,5 @@ if(!(property_exists($product,'id'))){
         <input name="add_to_cart" type="submit" class="btn btn-primary right" value="Aggiungi al carrello">
       </form>   
     </p>
-
+    
 </div>
