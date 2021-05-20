@@ -3,6 +3,19 @@
 if (!defined('ROOT_URL')) {
   die;
 }
+if (isset($_POST['add_to_cart'])) {
+
+  $productId = htmlspecialchars(trim($_POST['id']));
+  // addToCart Logic
+  $cm = new CartManager();
+  $cartId = $cm->getCurrentCrtId();
+
+  // aggiumngi al carrello "cartId" il prodotto "productId"
+  $cm->addToCart($productId, $cartId);
+
+  // stampato un messaggio per l'utente
+  //echo 'ok';
+}
 
 $productMrg=new ProductManager();
 $products=$productMrg->getAll();

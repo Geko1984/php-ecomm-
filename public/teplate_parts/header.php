@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +39,14 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav" style="margin-left:auto">
-                <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>shop?page=cart ">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="badge badge-success rounded-pill badge-warning">1</span>
-                </a>
-                </li>
-                </ul>
+                <ul class="navbar-nav ml-auto">
+        <li  class="nav-item">
+          <a class="nav-link" href="<?php echo ROOT_URL; ?>shop?page=cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge badge-success rounded-pill js-totCartItems"></span>
+          </a>
+        </li>
+      </ul>
                 
                 <ul class="navbar-nav" style="margin-left:auto">
                     <li class="nav-item dropdown">

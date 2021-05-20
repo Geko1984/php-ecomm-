@@ -1,7 +1,7 @@
 <?php
 class DB
 {
-    private $conn_;
+    private $conn;
     public $pdo;
     public function __construct()
     {
@@ -16,23 +16,32 @@ class DB
         $password = PASS;
 
         $this->pdo = new PDO($dsn, $user, $password);
-        //$this->pdo = new PDO('mysql:dbname=phpecomm;host:127.0.0.1','user' . NAME . ';host=' . HOST, USER, PASS);
+        $this->pdo ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     }
     public function query($sql)
-    {
-        try {
+     {
+    //     try {
             $q = $this->pdo->query($sql);
             if (!$q) {
-                throw new Exception("Error executing query ");
+                
+              //throw new Exception("Error executing query ");
                 return;
             }
             $data = $q->fetchAll();
             return $data;
-        } catch (Exception $e) 
-        {
-            throw $e;
-        }
+        // } catch (Exception $e) 
+        // {
+        //     throw $e;
+        // }
     }
+
+    public function execute($sql)
+    {
+      $stmt=$this->pdo->prepare($sql);
+      $stmt->execute();
+    }
+
+
     public function select_all($tableName, $columns = array()) {
 
         $query = 'SELECT ';
