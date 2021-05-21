@@ -47,19 +47,36 @@
           </a>
         </li>
       </ul>
+      <?php if (!$loggedInUser) : ?>
                 
-                <ul class="navbar-nav" style="margin-left:auto">
+        <ul class="navbar-nav" style="margin-left:auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Area riservata</a>
                         <ul class="dropdown-menu " aria-labelledby="dropdown04">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <a class="dropdown-item" href="<?php echo ROOT_URL; ?>auth?page=login">Login / Registrazione</a>
                         </ul>
                     </li>
                 </ul>
 
             </div>
+            <?php endif; ?>
+
+            <?php if ($loggedInUser) : ?>
+                
+                <ul class="navbar-nav" style="margin-left:auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $loggedInUser->email ?></a>
+                                <ul class="dropdown-menu " aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="<?php echo ROOT_URL; ?>auth?page=logout">Logout</a>
+                                </ul>
+                            </li>
+                        </ul>
+        
+                    </div>
+                    <?php endif; ?>
+        
+
+
 
         </div>
     </nav>
