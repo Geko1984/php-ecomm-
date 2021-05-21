@@ -67,7 +67,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $loggedInUser->email ?></a>
                                 <ul class="dropdown-menu " aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="<?php echo ROOT_URL; ?>auth?page=logout">Logout</a>
+                               <a class="dropdown-item" href="<?php echo ROOT_URL; ?>auth?page=logout">Logout</a>
                                 </ul>
                             </li>
                         </ul>
@@ -75,7 +75,20 @@
                     </div>
                     <?php endif; ?>
         
-
+                    <?php if ($loggedInUser && $loggedInUser->is_admin) : ?>
+                
+                <ul class="navbar-nav" style="margin-left:auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Amministrazione</a>
+                                <ul class="dropdown-menu " aria-labelledby="dropdown04">
+                               <a class="dropdown-item" href="<?php echo ROOT_URL; ?>admin">Dashboard</a>
+                                </ul>
+                            </li>
+                        </ul>
+        
+                    </div>
+                    <?php endif; ?>
+        
 
 
         </div>
